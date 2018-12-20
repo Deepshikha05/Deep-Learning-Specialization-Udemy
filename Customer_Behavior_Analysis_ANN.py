@@ -9,7 +9,10 @@ import pandas as pd
 import keras
 from keras.models import Sequential
 from keras.layers import Dense
-
+from keras.layers import Dropout
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
 # Importing the dataset
 dataset = pd.read_csv('Churn_Modelling.csv')
 X = dataset.iloc[:, 3:13].values
